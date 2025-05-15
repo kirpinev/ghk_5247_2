@@ -36,8 +36,8 @@ const familyProducts: Product[] = [
 
 const products: Product[] = [
   {
-    title: "+1 топовая категория кэшбэка",
-    text: "5% на самое популярное",
+    title: "+1 топовая категория с кэшбэком 5%",
+    text: "Дополнительная категория каждый месяц",
     image: smileArrow,
   },
   {
@@ -46,8 +46,8 @@ const products: Product[] = [
     image: drums,
   },
   {
-    title: "Секретная подборка партнёров с кэшбэком",
-    text: "Доступ к специальным предложениям",
+    title: "Эксклюзивный кэшбэк от партнёров",
+    text: "Доступ к особой подборке",
     image: gift,
   },
   {
@@ -56,7 +56,7 @@ const products: Product[] = [
     image: cashback,
   },
   {
-    title: "+1% годовых",
+    title: "+3% годовых",
     text: "По накопительному Альфа-Счёту на ежедневный остаток",
     image: percent,
   },
