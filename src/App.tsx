@@ -19,6 +19,7 @@ import { Gap } from "@alfalab/core-components/gap";
 import { useState } from "react";
 import { Radio } from "@alfalab/core-components/radio";
 import { ThxLayout } from "./thx/ThxLayout.tsx";
+import { sendDataToGA } from "./utils/events.ts";
 
 interface Product {
   title: string;
@@ -88,10 +89,19 @@ export const App = () => {
   const [radioType, setRadioType] = useState("radio1");
   const [loading, setLoading] = useState(false);
 
+  const connect = () => {
+    window.gtag("event", "5247_get_sub", {
+      variant_name: "5247_2",
+    });
+  };
+
   const submit = () => {
     setLoading(true);
 
-    Promise.resolve().then(() => {
+    sendDataToGA({
+      type: radioType === "radio1" ? "Личная" : "Семейная -42%",
+      price: radioType === "radio1" ? "399" : "699",
+    }).then(() => {
       setLoading(false);
       setThxShow(true);
       LS.setItem(LSKeys.ShowThx, true);
@@ -349,7 +359,14 @@ export const App = () => {
       <Gap size={72} />
 
       <div className={appSt.bottomBtn}>
-        <ButtonMobile block view="primary" onClick={() => setIsNextStep(true)}>
+        <ButtonMobile
+          block
+          view="primary"
+          onClick={() => {
+            setIsNextStep(true);
+            connect();
+          }}
+        >
           Подключить
         </ButtonMobile>
       </div>
