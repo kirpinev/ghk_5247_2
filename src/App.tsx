@@ -12,7 +12,6 @@ import transfer from "./assets/transfer.png";
 import cash from "./assets/cash.png";
 import discount from "./assets/discount.png";
 import family from "./assets/family.png";
-import sunglasses from "./assets/sunglasses.png";
 import { LS, LSKeys } from "./ls";
 import { appSt } from "./style.css";
 import { Gap } from "@alfalab/core-components/gap";
@@ -132,16 +131,16 @@ export const App = () => {
           <Gap size={32} />
           <div
             style={{
-              border: "1px solid #dff8e5",
+              border: "1px solid #F2F3F5",
               borderRadius: "1.5rem",
               padding: "1rem",
               display: "flex",
               alignItems: "center",
+              justifyContent: "space-between",
               gap: "1rem",
             }}
             onClick={() => setRadioType("radio1")}
           >
-            <Radio checked={radioType === "radio1"} />
             <div>
               <Typography.Text view="primary-medium" weight="bold">
                 Личная
@@ -164,21 +163,35 @@ export const App = () => {
                 </div>
               </div>
             </div>
+            <Radio checked={radioType === "radio1"} />
           </div>
           <Gap size={16} />
           <div
             style={{
-              border: "1px solid #dff8e5",
+              border: "1px solid #F2F3F5",
               borderRadius: "1.5rem",
               padding: "1rem",
               display: "flex",
               alignItems: "center",
+              justifyContent: "space-between",
               gap: "1rem",
             }}
             onClick={() => setRadioType("radio2")}
           >
-            <Radio checked={radioType === "radio2"} />
-            <div>
+            <div style={{ position: "relative" }}>
+              <div
+                style={{
+                  position: "absolute",
+                  top: "-17px",
+                  right: "-53px",
+                  backgroundColor: "orange",
+                  color: "white",
+                  padding: "4px 8px",
+                  borderRadius: "0.5rem",
+                }}
+              >
+                -42%
+              </div>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Typography.Text view="primary-medium" weight="bold">
                   Семейная
@@ -192,7 +205,9 @@ export const App = () => {
                     borderRadius: "0.7rem",
                   }}
                 >
-                  <Typography.Text view="primary-small">-42%</Typography.Text>
+                  <Typography.Text view="primary-small">
+                    +2 участника
+                  </Typography.Text>
                 </div>
               </div>
               <Gap size={8} />
@@ -214,27 +229,14 @@ export const App = () => {
                     </span>{" "}
                     699 ₽ в месяц
                   </Typography.Text>
+                  <Gap size={8} />
+                  <Typography.Text view="primary-small" color="secondary">
+                    Близкие получат все преимущества Альфа-Смарт бесплатно
+                  </Typography.Text>
                 </div>
               </div>
             </div>
-          </div>
-          <Gap size={32} />
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "1rem",
-              border: "1px solid #dff8e5",
-              borderRadius: "1.5rem",
-              padding: "1rem",
-            }}
-          >
-            <img src={sunglasses} alt="" width={24} height={24} />
-            <Typography.Text view="primary-medium">
-              Приглашайте до двух близких в семейную подписку. Каждый получит
-              все преимущества Альфа-Смарт
-            </Typography.Text>
+            <Radio checked={radioType === "radio2"} />
           </div>
         </div>
 
