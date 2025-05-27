@@ -175,22 +175,13 @@ export const App = () => {
               alignItems: "center",
               justifyContent: "space-between",
               gap: "1rem",
+              position: "relative",
             }}
             onClick={() => setRadioType("radio2")}
           >
-            <div style={{ position: "relative" }}>
-              <div
-                style={{
-                  position: "absolute",
-                  top: "-17px",
-                  right: "-53px",
-                  backgroundColor: "orange",
-                  color: "white",
-                  padding: "4px 8px",
-                  borderRadius: "0.5rem",
-                }}
-              >
-                -42%
+            <div>
+              <div style={{ right: "-11px", top: "9px", position: "absolute" }}>
+                <div className="content">-42%</div>
               </div>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Typography.Text view="primary-medium" weight="bold">

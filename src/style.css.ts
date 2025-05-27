@@ -4,6 +4,7 @@ const container = style({
   display: "flex",
   padding: "1rem",
   flexDirection: "column",
+  overflowX: "hidden",
 });
 
 const box = style({
